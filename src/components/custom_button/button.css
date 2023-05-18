@@ -1,0 +1,25 @@
+.btns {
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  background-color: #5cb85f;
+  text-decoration: none;
+  transition: ease-in-out 0.3s;
+  width: max-content;
+}
+
+.btns:hover {
+  color: #fff;
+  background-color: #458e47;
+}
+
+.btns:disabled {
+  background-color: #5cb85f;
+  border-color: #5cb85c;
+  opacity: 0.5;
+}

@@ -1,0 +1,84 @@
+p {
+  font-size: 16px;
+  color: #000;
+}
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* testimonial */
+.photo {
+  margin-bottom: 16px;
+  width: 150px;
+  height: 150px;
+}
+.img-carousel {
+  height: 300px;
+  width: 100%;
+}
+
+/* FAQ */
+#accordion-item {
+  border: 1px solid #d4d4d4;
+  margin-top: 12px;
+}
+
+/* footer */
+.flex-row > li {
+  background-color: #0d28a6;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-row > li > ion-icon {
+  font-size: 24px;
+  color: #fff;
+}
+
+/* button greeen */
+.btn-green {
+  font-weight: 600;
+  font-size: 20px;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  background-color: #5cb85f;
+  text-decoration: none;
+  transition: ease-in-out 0.3s;
+}
+.btn-green:hover {
+  color: #fff;
+  background-color: #458e47;
+}
+
+@media only screen and (max-width: 992px) {
+  p {
+    font-size: 14px;
+  }
+  .title {
+    font-size: 26px;
+    letter-spacing: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* header */
+  .img-car {
+    margin: 0 20px;
+  }
+
+  /* testimonial */
+  .photo {
+    width: 100px;
+    height: 100px;
+  }
+  .img-carousel {
+    height: 450px;
+  }
+}

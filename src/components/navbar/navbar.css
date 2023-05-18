@@ -1,0 +1,16 @@
+.nav-custom-link {
+  color: #000;
+  font-weight: 500;
+  font-size: 18px;
+  transition: ease-in-out 0.3s;
+}
+
+.nav-custom-link:hover {
+  color: #616161de;
+}
+
+@media only screen and (max-width: 576px) {
+  .nav-custom-link {
+    font-size: 16px;
+  }
+}

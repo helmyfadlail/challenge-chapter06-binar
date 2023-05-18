@@ -1,0 +1,25 @@
+/* search bar */
+.form-container {
+  bottom: 50px;
+  z-index: 10;
+}
+
+.form {
+  background-color: #fff;
+  width: 80%;
+  border: 2px solid #f1f1f1;
+  margin: auto;
+  box-shadow: 0px 1px 2px 1px #00000026;
+}
+
+label {
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 768px) {
+  /* search bar */
+  .form-container {
+    bottom: 0;
+    margin-top: 1rem;
+  }
+}
