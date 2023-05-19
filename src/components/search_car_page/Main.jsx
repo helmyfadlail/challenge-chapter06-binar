@@ -9,9 +9,11 @@ import ListCar from "./ListCar";
 // import main css searchcar
 import "./main.css";
 
+// import react redux for get data
 import { useDispatch, useSelector } from "react-redux";
 import { getCarsList } from "../../actions/carActions";
 
+// image for car data
 const imageArr = [
   "https://i.ibb.co/wRNQCvS/car-min1.jpg",
   "https://i.ibb.co/Jjr40zY/car-min2.jpg",
@@ -23,6 +25,8 @@ const imageArr = [
   "https://i.ibb.co/tbRZ68V/car-min8.jpg",
 ];
 
+const driverTypeArr = ["Dengan sopir", "Tanpa sopir"];
+
 const Main = () => {
   const [carsData, setCarsData] = React.useState([]);
   const [resultCars, setResultCars] = React.useState([]);
@@ -30,6 +34,7 @@ const Main = () => {
 
   const dispatch = useDispatch();
   const { cars } = useSelector((state) => state.CarsReducer);
+
   React.useEffect(() => {
     dispatch(getCarsList());
   }, [dispatch]);
@@ -51,13 +56,14 @@ const Main = () => {
     const mutator = getRandomInt(-1000000000, 1000000000);
     const availableAt = new Date(newDate.getTime() + mutator);
     const image = imageArr[Math.floor(Math.random() * imageArr.length)];
-    return { ...car, image, availableAt };
+    const driverType = driverTypeArr[Math.floor(Math.random() * driverTypeArr.length)];
+    return { ...car, driverType, image, availableAt };
   });
 
-  const handleSubmit = (e, date, time, capacity) => {
+  const handleSubmit = (e, driverType, date, time, capacity) => {
     e.preventDefault();
     const inputNewDateTime = new Date(`${date} ${time}`);
-    const filteredCar = searchCars.filter((car) => car.capacity >= capacity && car.availableAt >= inputNewDateTime);
+    const filteredCar = searchCars.filter((car) => car.capacity >= capacity && car.availableAt >= inputNewDateTime && car.driverType === driverType);
     setResultCars(filteredCar);
     setShowCars(true);
     console.log(resultCars);

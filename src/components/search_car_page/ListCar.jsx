@@ -1,5 +1,4 @@
-import React from "react";
-import { Alert, Card, Col, Row } from "react-bootstrap";
+import { Alert, Card, Container } from "react-bootstrap";
 import { TypeButton } from "../custom_button/Button";
 import { HiOutlineUsers } from "react-icons/hi";
 import { AiOutlineSetting, AiOutlineCalendar } from "react-icons/ai";
@@ -14,18 +13,18 @@ const ListCar = ({ items, showCars }) => {
 
   return (
     <>
-      <Row style={{ width: "80%" }} className="pt-3 pb-5 m-auto">
+      <Container className="pt-3 pb-5 m-auto">
         {showCars ? (
-          <Col className="p-0 d-flex flex-wrap gap-4 justify-content-center">
+          <Container className="p-0 card-container">
             {items.length === 0 ? (
-              <Alert className="fw-bold w-full" variant="danger">
+              <Alert className="fw-bold text-center" variant="danger">
                 Cars not found
               </Alert>
             ) : (
               items.map((car, index) => {
                 return (
-                  <Card key={index} className="p-4" style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src={car.image} alt={car.manufacture} height={"158"} />
+                  <Card key={index} className="p-4">
+                    <Card.Img variant="top" src={car.image} alt={car.manufacture} />
                     <Card.Body className="px-0 pt-3 pb-0">
                       <Card.Text className="fw-semibold mb-1">{`${car.manufacture} ${car.model} / ${car.type}`}</Card.Text>
                       <Card.Title className="fw-bold mb-1">{`${formatRupiah(car.rentPerDay)} / hari`}</Card.Title>
@@ -47,11 +46,11 @@ const ListCar = ({ items, showCars }) => {
                 );
               })
             )}
-          </Col>
+          </Container>
         ) : (
           ""
         )}
-      </Row>
+      </Container>
     </>
   );
 };
